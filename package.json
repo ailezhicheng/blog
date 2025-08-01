@@ -15,8 +15,11 @@
     "format": "prettier --write src/",
     "prepare": "husky"
   },
-    "lint-staged": {
-    "*.{js,ts,vue}": ["eslint --fix","prettier --write"]
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "pinia": "^3.0.3",
@@ -38,6 +41,7 @@
     "lint-staged": "^16.1.2",
     "npm-run-all2": "^8.0.4",
     "prettier": "3.6.2",
+    "sass-embedded": "^1.89.2",
     "typescript": "~5.8.0",
     "vite": "^7.0.6",
     "vite-plugin-vue-devtools": "^8.0.0",

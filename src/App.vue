@@ -1,8 +1,16 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1>👋</h1>
-  <p>HELLO,I AM XIAO MING 👋!</p>
+  <div>
+    <div class="background"><img src="./assets/img/background.webp" alt="" /></div>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+.background img {
+  display: inline-block;
+  height: 450px;
+  width: 100%;
+  object-fit: cover;
+}
+</style>
