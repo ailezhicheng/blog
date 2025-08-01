@@ -2,9 +2,9 @@
 
 <template>
   <h1>👋</h1>
-  <p>HELLO,I AM XIAO MING 👋!
+  <p>HELLO,I AM XIAO MING  👋!
 
-    
+
   </p>
 </template>
 
