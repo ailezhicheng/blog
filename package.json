@@ -12,9 +12,11 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
-    "lint": "eslint . --fix",
     "format": "prettier --write src/",
     "prepare": "husky"
+  },
+    "lint-staged": {
+    "*.{js,ts,vue}": "eslint --fix"
   },
   "dependencies": {
     "pinia": "^3.0.3",
