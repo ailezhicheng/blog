@@ -10,7 +10,7 @@
 <style scoped lang="scss">
 .parentbox {
   position: relative;
-  height: 500px;
+  height: 480px;
 
   .background img {
     display: inline-block;
