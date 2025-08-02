@@ -3,7 +3,28 @@
 <template>
   <div class="parentbox">
     <div class="background"><img src="./assets/img/background.webp" alt="" /></div>
-    <div class="introduc"></div>
+    <div class="introduc">
+      <div class="main-container">
+        <div class="left-profile">
+          <img
+            src="./assets/img/profile.jpg"
+            alt=""
+            style="height: 150px; width: 150px; border-radius: 50%; margin: 30px 10px"
+          />
+        </div>
+        <div class="middle">
+          <div class="title"><span>爱乐之城</span></div>
+          <div class="description"><span>写代码是因为爱，写到世界充满爱！</span></div>
+          <div class="_info">
+            <span class="follower">0 关注者</span>
+            <span class="isfollowing">100 正在关注</span>
+            <span class="sponsor"> 赞助</span>
+          </div>
+          <div class="social-link"></div>
+        </div>
+        <div class="right-top"></div>
+      </div>
+    </div>
   </div>
   <router-view></router-view>
 </template>
@@ -23,7 +44,7 @@
     right: 0;
   }
   .introduc {
-    height: 250px;
+    height: 220px;
     width: 1000px;
     position: absolute;
     top: 125px;
@@ -32,6 +53,29 @@
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 10px;
     transition: transform 0.1s ease;
+    .main-container {
+      display: flex;
+      .title {
+        margin: 40px 30px;
+        font-size: 30px;
+        font-family: '楷体', 'KaiTi', 'STKaiti', serif;
+        font-weight: 700;
+      }
+      .description {
+        font-size: 14px;
+        margin-bottom: 30px;
+        margin-left: 20px;
+      }
+      ._info {
+        margin: 30px 20px;
+        span {
+          margin: 0 20px;
+        }
+        .follower {
+          margin-left: 0;
+        }
+      }
+    }
   }
 }
 

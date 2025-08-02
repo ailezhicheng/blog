@@ -31,14 +31,8 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
   background-color:#ffffff ;
-    font-family:
-    "PingFang SC", /* 苹果系统 */
-    /* "Microsoft YaHei", Windows */
-    "HarmonyOS_Regular", /* 鸿蒙字体（可选） */
-    "Helvetica Neue",
-    "Helvetica",
-    "Arial",
-    sans-serif;
+  font-family: "楷体", "KaiTi", "STKaiti", serif;;
+  /* font-weight: 700; */
 }
 ol, ul {
 	list-style: none;
