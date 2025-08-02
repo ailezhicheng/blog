@@ -33,18 +33,21 @@ const handleSelect = (key: string) => {
   width: 1000px;
   .el-menu--horizontal > .el-menu-item.is-active {
     border: none;
-    color: #f7f0f7 !important;
+    color: #fefefe !important;
     background-color: #09090b !important;
   }
 
-  ::v-deep(.el-menu--horizontal > .el-menu-item:hover) {
-    color: #f89800 !important;
+  .el-menu--horizontal > .el-menu-item:hover {
+    color: black !important;
     background-color: #e4e4e7 !important;
   }
   .el-menu--horizontal.el-menu {
     border: none;
   }
-
+  .el-menu--horizontal > .el-menu-item.is-active:hover {
+    color: #fefefe !important;
+    background-color: #09090b !important;
+  }
   .el-menu--horizontal > .el-menu-item {
     height: 60%;
     padding: 0 30px;
@@ -54,9 +57,5 @@ const handleSelect = (key: string) => {
     border: none;
     margin: 0 15px;
   }
-
-  // .el-menu-demo{
-  //   background-color:rgba(255,255,255,0);
-  // }
 }
 </style>

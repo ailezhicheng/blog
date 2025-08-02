@@ -43,8 +43,8 @@ const handleSelect = (key: string) => {
   }
 
   ::v-deep(.el-menu--horizontal > .el-menu-item:hover) {
-    background-color: rgba(255, 255, 255, 0) !important;
-    color: #f89800 !important;
+    background-color: rgba(255, 255, 255, 0);
+    color: #f89800;
   }
   .el-menu--horizontal.el-menu {
     border-bottom: none;
