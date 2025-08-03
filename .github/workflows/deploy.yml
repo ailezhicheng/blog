@@ -1,10 +1,8 @@
 name: blog
-
 on:
   push:
     branches:
       - master
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-22.04

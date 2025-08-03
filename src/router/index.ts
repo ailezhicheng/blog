@@ -48,6 +48,11 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
+  {
+    path: '/details',
+    name: 'details',
+    component: () => import('@/views/Details/Detail.vue'),
+  },
 ]
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
