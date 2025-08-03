@@ -12,4 +12,10 @@ import Card from '@/components/Card.vue'
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.new-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+</style>

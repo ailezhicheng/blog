@@ -36,7 +36,7 @@
 
 <style lang="scss" scoped>
 .card-container {
-  width: 350px;
+  width: 320px;
   height: 330px;
   background-color: #ffffff;
   border: 2px solid #f9f9f9;
