@@ -38,7 +38,6 @@ jobs:
           source: "dist/**"
           target: /var/www/html
           strip_components: 1 
-
       - name: Reload Nginx
         uses: appleboy/ssh-action@v0.1.10
         with:
