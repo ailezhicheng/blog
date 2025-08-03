@@ -1,8 +1,19 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref, onMounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 const router = useRouter()
-const activeIndex = ref('1')
+const route = useRoute()
+const activeIndex = ref('')
+const pathMap: Record<string, string> = {
+  '/home/new': '1',
+  '/home/hot': '2',
+  '/home/comment': '3',
+}
+
+onMounted(() => {
+  const currentIndex = pathMap[route.path]
+  if (currentIndex) activeIndex.value = currentIndex
+})
 
 const handleSelect = (key: string) => {
   if (key === '1') router.push('/home/new')
