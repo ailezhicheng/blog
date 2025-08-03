@@ -1,37 +1,39 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="card-container">
-    <router-link :to="{ path: '/details', query: { id: 123 } }" class="card-link">
-      <div class="card-main">
-        <div class="img-container">
-          <img
-            src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=800"
-            alt=""
-          />
-        </div>
-        <div class="title">镜头与代码的交响：打造个人线上画廊与假期随笔</div>
-        <span class="feeling" style="color: #909097">这些天，日子很短。却过得很有意义。</span>
-        <div class="tag">
-          <div class="tag1">
-            <div>
-              <i class="iconfont icon-tag" style="font-size: 15px; color: #909097"></i>
-              <span style="color: #909097">生活笔记</span>
+  <div class="all-card">
+    <div class="card-container">
+      <router-link :to="{ path: '/details', query: { id: 123 } }" class="card-link">
+        <div class="card-main">
+          <div class="img-container">
+            <img
+              src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt=""
+            />
+          </div>
+          <div class="title">镜头与代码的交响：打造个人线上画廊与假期随笔</div>
+          <span class="feeling" style="color: #909097">这些天，日子很短。却过得很有意义。</span>
+          <div class="tag">
+            <div class="tag1">
+              <div>
+                <i class="iconfont icon-tag" style="font-size: 15px; color: #909097"></i>
+                <span style="color: #909097">生活笔记</span>
+              </div>
+            </div>
+            <div class="tag2">
+              <i class="iconfont icon-chakan" style="font-size: 30px; color: #909097"></i>
+              <span style="color: #909097">235</span>
+            </div>
+            <div class="tag3">
+              <i class="iconfont icon-shouye" style="color: #909097; padding-right: 5px"></i>
+              <span style="color: #909097">1</span>
+              <span style="color: #909097">分钟</span>
             </div>
           </div>
-          <div class="tag2">
-            <i class="iconfont icon-chakan" style="font-size: 30px; color: #909097"></i>
-            <span style="color: #909097">235</span>
-          </div>
-          <div class="tag3">
-            <i class="iconfont icon-shouye" style="color: #909097; padding-right: 5px"></i>
-            <span style="color: #909097">1</span>
-            <span style="color: #909097">分钟</span>
-          </div>
+          <span style="display: block; padding: 15px 20px; color: #909097">2个月前</span>
         </div>
-        <span style="display: block; padding: 15px 20px; color: #909097">2个月前</span>
-      </div>
-    </router-link>
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -47,6 +49,9 @@
   border: 2px solid #f9f9f9;
   border-radius: 20px;
   overflow: hidden;
+  transition: transform ease 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
   .card-main {
     transition: transform ease 0.3s;
   }
@@ -97,8 +102,10 @@
     }
   }
 }
-
+.card-container:hover {
+  transform: translateZ(10px);
+}
 .card-main:hover {
-  transform: translateY(-5px) scale(1.05);
+  transform: scale(1.05);
 }
 </style>
