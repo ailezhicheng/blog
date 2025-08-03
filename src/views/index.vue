@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
-const activeIndex = ref('')
+const activeIndex = ref('1')
 const pathToIndexMap: Record<string, string> = {
   '/home': '1',
   '/about': '2',
