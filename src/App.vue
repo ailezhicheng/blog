@@ -18,11 +18,26 @@
           <div class="_info">
             <span class="follower">0 关注者</span>
             <span class="isfollowing">100 正在关注</span>
-            <span class="sponsor"> 赞助</span>
+
+            <span class="iconfont icon-12345" style="margin-right: 0; color: #f87171"></span>
+            <span class="sponsor" style="margin-left: 5px">赞助 </span>
           </div>
           <div class="social-link"></div>
         </div>
-        <div class="right-top"></div>
+        <div class="right">
+          <div class="right-top right-top1"><span class="iconfont icon-3dian"></span></div>
+          <div class="right-top right-top2">
+            <span class="iconfont icon-dingyue" style="color: #ee832f"></span>
+            <div class="drop_menu">
+              <span style="font-size: 18px; padding-left: 10px">订阅RSS</span>
+            </div>
+          </div>
+          <div class="right-top right-top3"><span class="iconfont icon-sousuo"></span></div>
+          <div class="right-top4">
+            <span class="iconfont icon-profilefill" style="color: #faf9fa; font-size: 15"></span
+            ><span style="color: #faf9fa">关注</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -32,6 +47,59 @@
 .parentbox {
   position: relative;
   height: 480px;
+  .right {
+    display: flex;
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    .right-top {
+      padding: 0 18px;
+      height: 35px;
+      line-height: 35px;
+      border-radius: 20px;
+    }
+
+    .right-top2 {
+      position: relative;
+    }
+    .right-top2 .drop_menu {
+      position: absolute;
+      top: 40px;
+      left: -25px;
+      border-radius: 10px;
+      height: 35px;
+      width: 90px;
+      background-color: #52525b;
+      color: white;
+      display: none;
+    }
+    .right-top1:hover {
+      background-color: #ece5ec;
+    }
+    .right-top2:hover {
+      background-color: #ece5ec;
+    }
+    .right-top2:hover .drop_menu {
+      display: block;
+    }
+    .right-top3:hover {
+      background-color: #ece5ec;
+    }
+    .right-top4 {
+      border-radius: 20px;
+      background-color: #fa9c14;
+      height: 35px;
+      line-height: 35px;
+      padding: 0 20px;
+      cursor: pointer;
+    }
+    div {
+      margin: 0 8px;
+      span {
+        font-size: 20px;
+      }
+    }
+  }
 
   .background img {
     display: inline-block;
