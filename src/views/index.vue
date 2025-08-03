@@ -1,9 +1,19 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref, onMounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+const route = useRoute()
 const router = useRouter()
 const activeIndex = ref('1')
-
+const pathToIndexMap: Record<string, string> = {
+  '/home': '1',
+  '/about': '2',
+  '/works': '3',
+  '/archive': '4',
+}
+onMounted(() => {
+  const currentIndex = pathToIndexMap[route.path]
+  if (currentIndex) activeIndex.value = currentIndex
+})
 const handleSelect = (key: string) => {
   if (key === '1') router.push('/home')
   if (key === '2') router.push('/about')
