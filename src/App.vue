@@ -1,5 +1,4 @@
 <script setup lang="ts"></script>
-
 <template>
   <div class="parentbox">
     <div class="background"><img src="./assets/img/background.webp" alt="" /></div>

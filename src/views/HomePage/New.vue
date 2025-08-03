@@ -1,5 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Card from '@/components/Card.vue'
+</script>
 
-<template>最新</template>
+<template>
+  <div class="new-container">
+    <Card />
+  </div>
+</template>
 
-<style lang="scss"></style>
+<style lang="scss" scoped></style>

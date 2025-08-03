@@ -2,4 +2,4 @@
 
 <template>最热</template>
 
-<style lang="scss"></style>
+<style lang="scss" scoped></style>

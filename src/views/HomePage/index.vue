@@ -39,7 +39,7 @@ const handleSelect = (key: string) => {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .wrap {
   width: 1000px;
   .el-menu--horizontal > .el-menu-item.is-active {

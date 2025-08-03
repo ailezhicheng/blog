@@ -2,4 +2,4 @@
 
 <template>最多</template>
 
-<style lang="scss"></style>
+<style lang="scss" scoped></style>

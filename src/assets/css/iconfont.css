@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1754118112285') format('truetype');
+  src: url('iconfont.ttf?t=1754201103953') format('truetype');
 }
 
 .iconfont {
@@ -9,6 +9,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-chakan:before {
+  content: "\f02d4";
 }
 
 .icon-3dian:before {
@@ -25,6 +29,14 @@
 
 .icon-12345:before {
   content: "\e665";
+}
+
+.icon-shouye:before {
+  content: "\e63f";
+}
+
+.icon-tag:before {
+  content: "\e62a";
 }
 
 .icon-sousuo:before {
