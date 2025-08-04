@@ -30,10 +30,18 @@ const handleSelect = (key: string) => {
       mode="horizontal"
       @select="handleSelect"
     >
-      <el-menu-item index="1" class="reset">主页</el-menu-item>
-      <el-menu-item index="2" class="reset">关于</el-menu-item>
-      <el-menu-item index="3" class="reset">作品集</el-menu-item>
-      <el-menu-item index="4" class="reset">归档</el-menu-item>
+      <el-menu-item index="1" class="reset" style="font-size: 18px; color: white"
+        >主页</el-menu-item
+      >
+      <el-menu-item index="2" class="reset" style="font-size: 18px; color: white"
+        >关于</el-menu-item
+      >
+      <el-menu-item index="3" class="reset" style="font-size: 18px; color: white"
+        >作品集</el-menu-item
+      >
+      <el-menu-item index="4" class="reset" style="font-size: 18px; color: white"
+        >归档</el-menu-item
+      >
     </el-menu>
 
     <RouterView></RouterView>
