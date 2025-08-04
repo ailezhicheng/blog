@@ -15,13 +15,24 @@
         </div>
         <div class="middle">
           <div class="title"><span>爱乐之城</span></div>
-          <div class="description"><span>写代码是因为爱，写到世界充满爱！</span></div>
+          <div class="description" style="font-size: 18px">
+            <span>写代码是因为爱，写到世界充满爱！</span>
+          </div>
           <div class="_info">
-            <span class="follower">0 关注者</span>
-            <span class="isfollowing">100 正在关注</span>
+            <div class="follower">
+              <span>0</span>
+              <span style="color: #71717a; font-size: 17px"> 关注者</span>
+            </div>
 
-            <span class="iconfont icon-12345" style="margin-right: 0; color: #f87171"></span>
-            <span class="sponsor" style="margin-left: 5px">赞助 </span>
+            <div class="isfollowing">
+              <span>0</span>
+              <span style="color: #71717a; font-size: 17px"> 正在关注</span>
+            </div>
+
+            <div class="sponsor">
+              <span class="iconfont icon-12345" style="margin-right: 0; color: #f87171"></span>
+              <span style="color: #71717a; font-size: 17px; margin-left: 5px">赞助 </span>
+            </div>
           </div>
 
           <div class="social-link">
@@ -51,7 +62,7 @@
 </template>
 <style scoped lang="scss">
 .social-link {
-  margin-top: 25px;
+  margin-top: 10px;
   i.iconfont {
     font-size: 25px;
     margin-right: 20px;
@@ -162,7 +173,7 @@
     .main-container {
       display: flex;
       .title {
-        margin: 40px 30px;
+        margin: 30px 30px;
         margin-bottom: 20px;
         font-size: 30px;
         font-family: '楷体', 'KaiTi', 'STKaiti', serif;
@@ -170,18 +181,45 @@
       }
       .description {
         font-size: 14px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         margin-left: 20px;
       }
 
       ._info {
-        margin: 20px 20px;
+        display: flex;
+        margin: 10px 20px;
         margin-bottom: 20px;
-        span {
-          margin: 0 20px;
-        }
         .follower {
-          margin-left: 0;
+          display: inline-block;
+          margin-left: -13px;
+          height: 35px;
+          line-height: 35px;
+          padding: 0 15px;
+          border-radius: 19px;
+        }
+        .follower:hover {
+          background-color: #ece5ec;
+        }
+        .isfollowing {
+          display: inline-block;
+          height: 35px;
+          line-height: 35px;
+          padding: 0 15px;
+          border-radius: 19px;
+          margin-right: 20px;
+        }
+        .isfollowing:hover {
+          background-color: #ece5ec;
+        }
+        .sponsor {
+          display: inline-block;
+          height: 35px;
+          line-height: 35px;
+          padding: 0 20px;
+          border-radius: 19px;
+        }
+        .sponsor:hover {
+          background-color: #ece5ec;
         }
       }
     }
