@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
 interface Imgs {
   id: number
   url: string
@@ -17,44 +18,54 @@ const imgs: Imgs[] = [
     url: 'https://images.pexels.com/photos/32523950/pexels-photo-32523950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
   },
 ]
+
+const router = useRouter()
+const handleCardClick = (e: MouseEvent) => {
+  const target = e.target as HTMLElement
+  if (target.closest('.el-carousel__arrow')) {
+    return
+  }
+  router.push({
+    path: '/details',
+    query: { id: 123 },
+  })
+}
 </script>
 
 <template>
   <div class="all-card">
-    <div class="card-container">
-      <router-link :to="{ path: '/details', query: { id: 123 } }" class="card-link">
-        <div class="card-main">
-          <div class="img-container">
-            <div class="card">
-              <el-carousel height="180px" arrow="none" indicator-position="none">
-                <el-carousel-item v-for="item in imgs" :key="item.id">
-                  <img :src="item.url" alt="" />
-                </el-carousel-item>
-              </el-carousel>
-            </div>
+    <div class="card-container" @click="handleCardClick">
+      <div class="card-main">
+        <div class="img-container">
+          <div class="card">
+            <el-carousel height="180px" arrow="none" indicator-position="none">
+              <el-carousel-item v-for="item in imgs" :key="item.id">
+                <img :src="item.url" alt="" />
+              </el-carousel-item>
+            </el-carousel>
           </div>
-          <div class="title">镜头与代码的交响：打造个人线上画廊与假期随笔</div>
-          <span class="feeling" style="color: #909097">这些天，日子很短。却过得很有意义。</span>
-          <div class="tag">
-            <div class="tag1">
-              <div>
-                <i class="iconfont icon-tag" style="font-size: 15px; color: #909097"></i>
-                <span style="color: #909097">生活笔记</span>
-              </div>
-            </div>
-            <div class="tag2">
-              <i class="iconfont icon-chakan" style="font-size: 30px; color: #909097"></i>
-              <span style="color: #909097">235</span>
-            </div>
-            <div class="tag3">
-              <i class="iconfont icon-shouye" style="color: #909097; padding-right: 5px"></i>
-              <span style="color: #909097">1</span>
-              <span style="color: #909097">分钟</span>
-            </div>
-          </div>
-          <span style="display: block; padding: 15px 20px; color: #909097">2个月前</span>
         </div>
-      </router-link>
+        <div class="title">镜头与代码的交响：打造个人线上画廊与假期随笔</div>
+        <span class="feeling" style="color: #909097">这些天，日子很短。却过得很有意义。</span>
+        <div class="tag">
+          <div class="tag1">
+            <div>
+              <i class="iconfont icon-tag" style="font-size: 15px; color: #909097"></i>
+              <span style="color: #909097">生活笔记</span>
+            </div>
+          </div>
+          <div class="tag2">
+            <i class="iconfont icon-chakan" style="font-size: 30px; color: #909097"></i>
+            <span style="color: #909097">235</span>
+          </div>
+          <div class="tag3">
+            <i class="iconfont icon-shouye" style="color: #909097; padding-right: 5px"></i>
+            <span style="color: #909097">1</span>
+            <span style="color: #909097">分钟</span>
+          </div>
+        </div>
+        <span style="display: block; padding: 15px 20px; color: #909097">2个月前</span>
+      </div>
     </div>
   </div>
 </template>
@@ -73,7 +84,7 @@ const imgs: Imgs[] = [
   overflow: hidden;
   transition: transform ease 0.3s;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-
+  cursor: pointer;
   .card-main {
     transition: transform ease 0.3s;
   }
