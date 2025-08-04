@@ -38,7 +38,7 @@ const handleCardClick = (e: MouseEvent) => {
       <div class="card-main">
         <div class="img-container">
           <div class="card">
-            <el-carousel height="180px" arrow="none" indicator-position="none">
+            <el-carousel height="180px" arrow="always" indicator-position="none" interval="3500">
               <el-carousel-item v-for="item in imgs" :key="item.id">
                 <img :src="item.url" alt="" />
               </el-carousel-item>
@@ -71,6 +71,21 @@ const handleCardClick = (e: MouseEvent) => {
 </template>
 
 <style lang="scss" scoped>
+:deep(.el-carousel__arrow i) {
+  color: black !important;
+}
+:deep(button.el-carousel__arrow) {
+  background-color: #ffffff !important;
+  height: 20px;
+  width: 20px;
+}
+:deep(button.el-carousel__arrow--left) {
+  left: 15px;
+}
+:deep(button.el-carousel__arrow--right) {
+  right: 15px;
+}
+
 .card-link {
   display: block;
   text-decoration: none;
@@ -83,7 +98,7 @@ const handleCardClick = (e: MouseEvent) => {
   border-radius: 20px;
   overflow: hidden;
   transition: transform ease 0.3s;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   cursor: pointer;
   .card-main {
     transition: transform ease 0.3s;
@@ -136,7 +151,8 @@ const handleCardClick = (e: MouseEvent) => {
   }
 }
 .card-container:hover {
-  transform: translateZ(10px);
+  transform: translateY(-3px);
+  box-shadow: rgb(0 0 0 / 10%) 0 10px 50px;
 }
 .card-main:hover {
   transform: scale(1.05);

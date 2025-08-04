@@ -6,14 +6,44 @@ interface NavList {
   content: string
 }
 const navList: NavList[] = [
-  { id: 'status', label: '社会地位', content: '' },
-  { id: 'personality', label: '性格属性', content: '' },
-  { id: 'hobby', label: '兴趣爱好', content: '' },
-  { id: 'now_status', label: '现状', content: '' },
-  { id: 'name_from', label: '名字由来', content: '' },
-  { id: 'experience', label: '一些经历', content: '' },
+  {
+    id: 'status',
+    label: '社会地位',
+    content:
+      '我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!',
+  },
+  {
+    id: 'personality',
+    label: '性格属性',
+    content:
+      '我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!',
+  },
+  {
+    id: 'hobby',
+    label: '兴趣爱好',
+    content:
+      '我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!',
+  },
+  {
+    id: 'now_status',
+    label: '现状',
+    content:
+      '我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!',
+  },
+  {
+    id: 'name_from',
+    label: '名字由来',
+    content:
+      '我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!',
+  },
+  {
+    id: 'experience',
+    label: '一些经历',
+    content:
+      '我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!我一定能够在不久的将来在技术方面做的更好，非常开心与你在这里相遇!',
+  },
 ]
-const activeId = ref('status')
+const activeId = ref('')
 const handleScroll = () => {
   const offsets = navList.map((item) => {
     const el = document.getElementById(item.id)
@@ -30,7 +60,6 @@ onMounted(() => {
   window.addEventListener('scroll', handleScroll)
   handleScroll()
 })
-
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll)
 })
@@ -82,6 +111,7 @@ onBeforeUnmount(() => {
 .about-container {
   position: relative;
   flex: 1;
+  height: 1000px;
 }
 .about-description {
   padding-top: 20px;
