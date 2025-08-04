@@ -2,10 +2,6 @@
 <template>
   <div class="parentbox">
     <div class="background">
-      <!-- <video autoplay muted loop>
-        <source src="https://haowallpaper.com/link/common/file/previewFileImg/17349970275978624.mp4" type="video/mp4" />
-      </video> -->
-      <!-- <img src="https://haowallpaper.com/link/common/file/previewFileImg/17299555438742912" alt="" /> -->
       <img src="./assets/img/background.webp" alt="" />
     </div>
     <div class="introduc">
