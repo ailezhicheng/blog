@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1754297009574') format('truetype');
+  src: url('iconfont.ttf?t=1754314123770') format('truetype');
 }
 
 .iconfont {
@@ -43,6 +43,10 @@
   content: "\e651";
 }
 
+.icon-weibo:before {
+  content: "\e73c";
+}
+
 .icon-xihuan:before {
   content: "\e63a";
 }
@@ -59,6 +63,10 @@
   content: "\e619";
 }
 
+.icon-Bzhan1:before {
+  content: "\f2f9";
+}
+
 .icon-sousuo:before {
   content: "\e602";
 }
@@ -67,7 +75,23 @@
   content: "\e60c";
 }
 
+.icon-xiaohongshu:before {
+  content: "\e631";
+}
+
+.icon-tiktok:before {
+  content: "\e618";
+}
+
+.icon-a-sheepanimal:before {
+  content: "\e610";
+}
+
 .icon-tuite:before {
   content: "\e527";
+}
+
+.icon-shou_instagram:before {
+  content: "\e580";
 }
 

@@ -42,7 +42,61 @@
           </div>
         </div>
         <div class="right">
-          <div class="right-top right-top1"><span class="iconfont icon-3dian"></span></div>
+          <div class="right-top right-top1">
+            <span class="iconfont icon-3dian"></span>
+            <div class="dian-box">
+              <ul>
+                <li>
+                  <a href="#"
+                    ><i class="iconfont icon-xiaohongshu" style="color: #f87171"></i
+                    ><span> 在 RedBook 上查看</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="iconfont icon-shou_instagram" style="color: #fe0361"></i
+                    ><span>在 Instagram 上查看</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#"><i class="iconfont icon-tiktok"></i><span>在 Tiktok 上查看</span></a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="iconfont icon-weibo" style="color: #e6172d"></i
+                    ><span>在 Weibo 上查看</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="iconfont icon-Bzhan1" style="color: #f98ea2; font-size: 20px"></i
+                    ><span>在 B站 上查看</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="iconfont icon-dingyue" style="color: #ed873a"></i
+                    ><span>订阅 RSS</span></a
+                  >
+                </li>
+                <li>
+                  <button>
+                    <i
+                      class="iconfont icon-sousuo"
+                      style="
+                        font-size: 20px;
+                        margin-left: -1px;
+                        padding-left: 2px;
+                        padding-top: 5px;
+                      "
+                    ></i
+                    ><span>在本站中搜索</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <div class="right-top right-top2">
             <span class="iconfont icon-dingyue" style="color: #ee832f"></span>
             <div class="drop_menu">
@@ -98,13 +152,61 @@
   .right {
     display: flex;
     position: absolute;
-    top: 30px;
+    top: 20px;
     right: 40px;
     .right-top {
       padding: 0 18px;
       height: 35px;
       line-height: 35px;
       border-radius: 20px;
+    }
+    .right-top1:hover .dian-box {
+      display: block !important;
+    }
+    .dian-box {
+      display: none;
+      left: 0;
+      top: 35px;
+      position: absolute;
+      // background-color: red;
+      height: 400px;
+      width: 230px;
+      box-shadow: 10px rgba(0, 0, 0, 0.3);
+      ul {
+        background-color: #ffffff;
+        border-radius: 10px;
+        border: 1px solid #eee;
+        // height: 100%;
+        padding: 10px 0px;
+        border: 1px solid white;
+        li {
+          height: 39px;
+          line-height: 39px;
+          font-family: 'KaiTi';
+          a span {
+            font-size: 16px;
+            color: #5a6270;
+          }
+          a .iconfont {
+            margin: 0 10px;
+          }
+        }
+        button {
+          border: none;
+          background-color: transparent;
+          font-family: 'KaiTi';
+          span {
+            font-size: 16px;
+            color: #5a6270;
+          }
+          .iconfont {
+            margin: 0 10px;
+          }
+        }
+      }
+    }
+    .right-top1 {
+      position: relative;
     }
 
     .right-top2 {
@@ -124,6 +226,7 @@
     .right-top1:hover {
       background-color: #ece5ec;
     }
+
     .right-top2:hover {
       background-color: #ece5ec;
     }
