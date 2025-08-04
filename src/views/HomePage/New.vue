@@ -9,6 +9,7 @@ import Card from '@/components/Card.vue'
     <Card />
     <Card />
     <Card />
+    <Card />
   </div>
 </template>
 

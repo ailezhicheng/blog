@@ -1,7 +1,13 @@
 <script setup lang="ts"></script>
 <template>
   <div class="parentbox">
-    <div class="background"><img src="./assets/img/background.webp" alt="" /></div>
+    <div class="background">
+      <video autoplay muted loop>
+        <source src="@/assets/img/backvideo.mp4" type="video/mp4" />
+      </video>
+      <!-- <img src="https://haowallpaper.com/link/common/file/previewFileImg/17299555438742912" alt="" /> -->
+      <!-- <img src="./assets/img/background.webp" alt="" /> -->
+    </div>
     <div class="introduc">
       <div class="main-container">
         <div class="left-profile">
@@ -100,7 +106,7 @@
     }
   }
 
-  .background img {
+  .background video {
     display: inline-block;
     height: 100%;
     width: 100%;

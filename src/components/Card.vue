@@ -1,4 +1,23 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+interface Imgs {
+  id: number
+  url: string
+}
+const imgs: Imgs[] = [
+  {
+    id: 1,
+    url: 'https://images.pexels.com/photos/33098314/pexels-photo-33098314.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
+  {
+    id: 2,
+    url: 'https://images.pexels.com/photos/33145846/pexels-photo-33145846.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
+  {
+    id: 3,
+    url: 'https://images.pexels.com/photos/32523950/pexels-photo-32523950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
+]
+</script>
 
 <template>
   <div class="all-card">
@@ -6,10 +25,13 @@
       <router-link :to="{ path: '/details', query: { id: 123 } }" class="card-link">
         <div class="card-main">
           <div class="img-container">
-            <img
-              src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=800"
-              alt=""
-            />
+            <div class="card">
+              <el-carousel height="180px" arrow="none" indicator-position="none">
+                <el-carousel-item v-for="item in imgs" :key="item.id">
+                  <img :src="item.url" alt="" />
+                </el-carousel-item>
+              </el-carousel>
+            </div>
           </div>
           <div class="title">镜头与代码的交响：打造个人线上画廊与假期随笔</div>
           <span class="feeling" style="color: #909097">这些天，日子很短。却过得很有意义。</span>
