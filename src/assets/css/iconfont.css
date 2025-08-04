@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1754227323942') format('truetype');
+  src: url('iconfont.ttf?t=1754297009574') format('truetype');
 }
 
 .iconfont {
@@ -25,6 +25,10 @@
 
 .icon-profilefill:before {
   content: "\e77a";
+}
+
+.icon-github:before {
+  content: "\ead8";
 }
 
 .icon-12345:before {
@@ -57,5 +61,13 @@
 
 .icon-sousuo:before {
   content: "\e602";
+}
+
+.icon-telegram:before {
+  content: "\e60c";
+}
+
+.icon-tuite:before {
+  content: "\e527";
 }
 
