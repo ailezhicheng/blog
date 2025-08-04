@@ -2,7 +2,7 @@
 <template>
   <div class="parentbox">
     <div class="background">
-      <img src="./assets/img/dog.png" alt="" />
+      <img src="./assets/img/dog.webp" alt="" />
     </div>
     <div class="introduc">
       <div class="main-container">
@@ -156,7 +156,7 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(1px);
     border-radius: 10px;
     transition: transform 0.1s ease;
     .main-container {
