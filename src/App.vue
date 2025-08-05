@@ -27,6 +27,32 @@ onMounted(() => {
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside)
 })
+
+// 搜索
+const showSearch = ref(false)
+const keyword = ref('')
+
+const openSearch = () => {
+  showSearch.value = true
+  document.body.style.overflow = 'hidden' // 禁止背景滚动
+}
+
+const closeSearch = () => {
+  showSearch.value = false
+  document.body.style.overflow = '' // 恢复滚动
+}
+
+// esc 键关闭
+const handleKey = (e: KeyboardEvent) => {
+  if (e.key === 'Escape') closeSearch()
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKey)
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('keydown', handleKey)
+})
 </script>
 <template>
   <div class="parentbox">
@@ -71,8 +97,8 @@ onBeforeUnmount(() => {
           </div>
         </div>
         <div class="right">
-          <div class="right-top right-top1" ref="triggerRef">
-            <span class="iconfont icon-3dian" @click="toggleBox"></span>
+          <div class="right-top right-top1" ref="triggerRef" @click="toggleBox">
+            <span class="iconfont icon-3dian"></span>
             <div class="dian-box" v-show="showBox" ref="boxRef">
               <ul>
                 <li>
@@ -129,7 +155,12 @@ onBeforeUnmount(() => {
               <span style="font-size: 18px; padding-left: 10px">订阅RSS</span>
             </div>
           </div>
-          <div class="right-top right-top3"><span class="iconfont icon-sousuo"></span></div>
+          <div class="right-top right-top3" @click="openSearch">
+            <span class="iconfont icon-sousuo"></span>
+            <div class="sousuo">
+              <span style="font-size: 18px; padding-left: 0px">在本站搜索</span>
+            </div>
+          </div>
           <div class="right-top4">
             <span class="iconfont icon-profilefill" style="color: #faf9fa; font-size: 15"></span
             ><span style="color: #faf9fa">关注</span>
@@ -139,8 +170,68 @@ onBeforeUnmount(() => {
     </div>
   </div>
   <router-view></router-view>
+  <div class="content-sousuo">
+    <!-- 遮罩层 + 弹窗 -->
+    <transition name="fade">
+      <div v-if="showSearch" class="overlay" @click.self="closeSearch">
+        <div class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+          <input type="text" placeholder="关键词" v-model="keyword" />
+        </div>
+      </div>
+    </transition>
+  </div>
 </template>
 <style scoped lang="scss">
+.content-sousuo {
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    // backdrop-filter: blur(1px); /* 背景模糊 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  /* 搜索框容器 */
+  .search-box {
+    position: relative;
+    background: white;
+    border-radius: 10px;
+    padding: 0.5rem 2rem;
+    min-width: 350px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    span {
+      position: absolute;
+      font-size: 20px;
+      top: 17px;
+      left: 35px;
+    }
+  }
+
+  .search-box input {
+    width: 80%;
+    padding: 0.6rem 2rem;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background: white;
+  }
+
+  /* 过渡动画 */
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: all 0.3s ease;
+  }
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
 .social-link {
   margin-top: 10px;
   i.iconfont {
@@ -252,9 +343,30 @@ onBeforeUnmount(() => {
     .right-top2:hover .drop_menu {
       display: block;
     }
-    .right-top3:hover {
-      background-color: #ece5ec;
+    .right-top3 {
+      position: relative;
+      .sousuo {
+        position: absolute;
+        top: 45px;
+        width: 100px;
+        left: -25px;
+        background-color: #52525b;
+        border-radius: 10px;
+        height: 35px;
+        line-height: 35px;
+        color: white;
+        text-align: center;
+        display: none;
+      }
+      &:hover .sousuo {
+        display: block;
+      }
+
+      &:hover {
+        background-color: #ece5ec;
+      }
     }
+
     .right-top4 {
       border-radius: 20px;
       background-color: #fa9c14;
