@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
+const router = useRouter()
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 const showBox = ref(false)
 const triggerRef = ref<HTMLElement | null>(null)
@@ -53,6 +55,15 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('keydown', handleKey)
 })
+const handleEnter = () => {
+  closeSearch()
+  router.push({
+    path: '/search',
+    query: {
+      key: keyword.value,
+    },
+  })
+}
 </script>
 <template>
   <div class="parentbox">
@@ -176,7 +187,13 @@ onBeforeUnmount(() => {
       <div v-if="showSearch" class="overlay" @click.self="closeSearch">
         <div class="search-box">
           <span class="iconfont icon-sousuo"></span>
-          <input type="text" placeholder="关键词" v-model="keyword" />
+          <input
+            type="text"
+            placeholder="关键词"
+            v-model="keyword"
+            autofocus
+            @keydown.enter="handleEnter"
+          />
         </div>
       </div>
     </transition>
@@ -219,6 +236,10 @@ onBeforeUnmount(() => {
     outline: none;
     border-radius: 6px;
     background: white;
+    &::placeholder {
+      font-family: 'KaiTi';
+      font-size: 18px;
+    }
   }
 
   /* 过渡动画 */
@@ -315,9 +336,6 @@ onBeforeUnmount(() => {
         }
       }
     }
-    // .right-top1:hover .dian-box{
-    //   display: block;
-    // }
 
     .right-top2 {
       position: relative;
