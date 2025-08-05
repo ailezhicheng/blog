@@ -1,4 +1,33 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+const showBox = ref(false)
+const triggerRef = ref<HTMLElement | null>(null)
+const boxRef = ref<HTMLElement | null>(null)
+
+const toggleBox = (): void => {
+  showBox.value = !showBox.value
+}
+
+// 监听点击外部，隐藏弹出框
+const handleClickOutside = (event: MouseEvent): void => {
+  const trigger = triggerRef.value
+  const box = boxRef.value
+
+  // 目标元素
+  const target = event.target as Node | null
+
+  if (trigger && box && target && !trigger.contains(target) && !box.contains(target)) {
+    showBox.value = false
+  }
+}
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleClickOutside)
+})
+</script>
 <template>
   <div class="parentbox">
     <div class="background">
@@ -42,14 +71,14 @@
           </div>
         </div>
         <div class="right">
-          <div class="right-top right-top1">
-            <span class="iconfont icon-3dian"></span>
-            <div class="dian-box">
+          <div class="right-top right-top1" ref="triggerRef">
+            <span class="iconfont icon-3dian" @click="toggleBox"></span>
+            <div class="dian-box" v-show="showBox" ref="boxRef">
               <ul>
                 <li>
                   <a href="#"
                     ><i class="iconfont icon-xiaohongshu" style="color: #f87171"></i
-                    ><span> 在 RedBook 上查看</span></a
+                    ><span>在 RedBook 上查看</span></a
                   >
                 </li>
                 <li>
@@ -59,39 +88,36 @@
                   >
                 </li>
                 <li>
-                  <a href="#"><i class="iconfont icon-tiktok"></i><span>在 Tiktok 上查看</span></a>
-                </li>
-                <li>
-                  <a href="#"
-                    ><i class="iconfont icon-weibo" style="color: #e6172d"></i
-                    ><span>在 Weibo 上查看</span></a
+                  <a href="https://www.douyin.com/user/self?from_tab_name=main"
+                    ><i class="iconfont icon-tiktok"></i><span>在 Tiktok 上查看</span></a
                   >
                 </li>
                 <li>
                   <a href="#"
-                    ><i class="iconfont icon-Bzhan1" style="color: #f98ea2; font-size: 20px"></i
+                    ><i class="iconfont icon-weibo" style="color: #e6172d; font-size: 16px"></i
+                    ><span>在 Weibo 上查看</span></a
+                  >
+                </li>
+                <li>
+                  <a href="https://space.bilibili.com/502093016?spm_id_from=333.788.0.0"
+                    ><i
+                      class="iconfont icon-Bzhan1"
+                      style="color: #f98ea2; font-size: 20px; margin-left: 8px"
+                    ></i
                     ><span>在 B站 上查看</span></a
                   >
                 </li>
                 <li>
                   <a href="#"
-                    ><i class="iconfont icon-dingyue" style="color: #ed873a"></i
-                    ><span>订阅 RSS</span></a
-                  >
+                    ><i class="iconfont icon-dingyue"></i>
+                    <span>订阅</span>
+                  </a>
                 </li>
                 <li>
-                  <button>
-                    <i
-                      class="iconfont icon-sousuo"
-                      style="
-                        font-size: 20px;
-                        margin-left: -1px;
-                        padding-left: 2px;
-                        padding-top: 5px;
-                      "
-                    ></i
-                    ><span>在本站中搜索</span>
-                  </button>
+                  <a href="#"
+                    ><i class="iconfont icon-sousuo" style="color: #ed873a"></i>
+                    <span>在本站中搜索</span>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -160,54 +186,47 @@
       line-height: 35px;
       border-radius: 20px;
     }
-    .right-top1:hover .dian-box {
-      display: block !important;
-    }
-    .dian-box {
-      display: none;
-      left: 0;
-      top: 35px;
-      position: absolute;
-      // background-color: red;
-      height: 400px;
-      width: 230px;
-      box-shadow: 10px rgba(0, 0, 0, 0.3);
-      ul {
-        background-color: #ffffff;
-        border-radius: 10px;
-        border: 1px solid #eee;
-        // height: 100%;
-        padding: 10px 0px;
-        border: 1px solid white;
-        li {
-          height: 39px;
-          line-height: 39px;
-          font-family: 'KaiTi';
-          a span {
-            font-size: 16px;
-            color: #5a6270;
+
+    .right-top1 {
+      position: relative;
+
+      .dian-box {
+        left: 0;
+        top: 38px;
+        position: absolute;
+        width: 230px;
+        z-index: 1000;
+        ul {
+          background-color: #ffffff;
+          border-radius: 10px;
+          border: 1px solid white;
+          padding: 10px 0px;
+          box-shadow: 0 0px 18px rgba(0, 0, 0, 0.3);
+          li:hover {
+            background-color: #ece5ec;
           }
-          a .iconfont {
-            margin: 0 10px;
-          }
-        }
-        button {
-          border: none;
-          background-color: transparent;
-          font-family: 'KaiTi';
-          span {
-            font-size: 16px;
-            color: #5a6270;
-          }
-          .iconfont {
-            margin: 0 10px;
+          li {
+            height: 35px;
+            line-height: 35px;
+            font-family: 'KaiTi';
+            a {
+              display: inline-block;
+              width: 100%;
+            }
+            a span {
+              font-size: 16px;
+              color: #5a6270;
+            }
+            a .iconfont {
+              margin: 0 10px;
+            }
           }
         }
       }
     }
-    .right-top1 {
-      position: relative;
-    }
+    // .right-top1:hover .dian-box{
+    //   display: block;
+    // }
 
     .right-top2 {
       position: relative;
