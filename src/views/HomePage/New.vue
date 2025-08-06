@@ -13,6 +13,7 @@ interface Card {
   time: number
   contentId: string
   publish_time: string
+  _id: string
 }
 const card: Ref<Card[]> = ref([])
 

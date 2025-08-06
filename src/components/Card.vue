@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import http from '../api/http'
 import { useRouter } from 'vue-router'
 import format from '@/utils.ts'
 interface Card {
@@ -10,13 +11,25 @@ interface Card {
   time: number
   contentId: string
   publish_time: string
+  _id: string
 }
 const props = defineProps<{
   card: Card
 }>()
 
 const router = useRouter()
-const handleCardClick = (e: MouseEvent) => {
+const handleCardClick = async (e: MouseEvent) => {
+  const view = props.card.view + 1
+
+  try {
+    await http.put('/blog', {
+      id: props.card._id,
+      view,
+    })
+  } catch (err) {
+    console.error('更新浏览次数失败', err)
+  }
+
   const target = e.target as HTMLElement
   if (target.closest('.el-carousel__arrow')) {
     return
@@ -57,7 +70,6 @@ const handleCardClick = (e: MouseEvent) => {
           <div class="tag3">
             <i class="iconfont icon-shouye" style="color: #909097; padding-right: 5px"></i>
             <span style="color: #909097">{{ format(new Date(Number(card.publish_time))) }}</span>
-            <!-- <span style="color: #909097">分钟</span> -->
           </div>
         </div>
         <span style="display: block; padding: 15px 20px; color: #909097">{{
