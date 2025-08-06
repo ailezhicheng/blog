@@ -33,13 +33,13 @@ const htmlContent = computed(() => {
 </script>
 
 <template>
-  <div class="wrap" v-html="htmlContent"></div>
+  <div class="wrap markdown-body" v-html="htmlContent" style="margin-top: 40px"></div>
 </template>
 
 <style lang="scss" scoped>
 .wrap {
+  font-size: 20px;
   width: 1200px;
-  margin: 0 auto;
-  // text-align: center;
+  margin: 40px auto;
 }
 </style>

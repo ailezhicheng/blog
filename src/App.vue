@@ -68,7 +68,11 @@ const handleEnter = () => {
 <template>
   <div class="parentbox">
     <div class="background">
-      <img src="./assets/img/background.webp" alt="" />
+      <img
+        src="https://images.pexels.com/photos/12152333/pexels-photo-12152333.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        alt=""
+      />
+      <!-- <img src="./assets/img/background.webp" alt="" /> -->
 
       <!-- <video autoplay muted>
         <source src="https://videos.pexels.com/video-files/27439386/12144625_1080_1920_30fps.mp4" type="video/mp4" />
