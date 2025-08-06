@@ -1,7 +1,7 @@
 import axios from 'axios'
 const request = axios.create({
   baseURL: 'https://nbplus507.dpdns.org',
-  timeout: 1000,
+  timeout: 10000,
 })
 
 request.interceptors.request.use(
