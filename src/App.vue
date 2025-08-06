@@ -68,8 +68,12 @@ const handleEnter = () => {
 <template>
   <div class="parentbox">
     <div class="background">
-      <!-- <img src="./assets/img/background.webp" alt="" /> -->
       <img src="./assets/img/background.webp" alt="" />
+
+      <!-- <video autoplay muted>
+        <source src="https://videos.pexels.com/video-files/27439386/12144625_1080_1920_30fps.mp4" type="video/mp4" />
+  您的浏览器不支持 video 标签。
+</video> -->
     </div>
     <div class="introduc">
       <div class="main-container">

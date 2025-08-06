@@ -40,5 +40,6 @@ const htmlContent = computed(() => {
 .wrap {
   width: 1200px;
   margin: 0 auto;
+  // text-align: center;
 }
 </style>
