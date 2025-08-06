@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-
+import format from '@/utils.ts'
 interface Card {
   imgs: string[]
   title: string
@@ -56,8 +56,8 @@ const handleCardClick = (e: MouseEvent) => {
           </div>
           <div class="tag3">
             <i class="iconfont icon-shouye" style="color: #909097; padding-right: 5px"></i>
-            <span style="color: #909097">{{ card.time }}</span>
-            <span style="color: #909097">分钟</span>
+            <span style="color: #909097">{{ format(new Date(Number(card.publish_time))) }}</span>
+            <!-- <span style="color: #909097">分钟</span> -->
           </div>
         </div>
         <span style="display: block; padding: 15px 20px; color: #909097">{{
