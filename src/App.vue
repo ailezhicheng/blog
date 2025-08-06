@@ -68,6 +68,7 @@ const handleEnter = () => {
 <template>
   <div class="parentbox">
     <div class="background">
+      <!-- <img src="./assets/img/background.webp" alt="" /> -->
       <img src="./assets/img/background.webp" alt="" />
     </div>
     <div class="introduc">

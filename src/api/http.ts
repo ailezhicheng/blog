@@ -1,8 +1,7 @@
 import axios from 'axios'
 const request = axios.create({
-  baseURL: 'https://some-domain.com/api/',
+  baseURL: 'http://127.0.0.1:3000',
   timeout: 1000,
-  headers: { 'X-Custom-Header': 'foobar' },
 })
 
 request.interceptors.request.use(

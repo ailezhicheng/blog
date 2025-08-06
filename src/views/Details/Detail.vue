@@ -1,20 +1,39 @@
 <script setup lang="ts">
 import request from '@/api/http'
-import { onMounted } from 'vue'
+import { onMounted, ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { marked } from 'marked'
 const route = useRoute()
 
+const id = route.query.id as string
+
+interface blogDetail {
+  imgs: string[]
+  title: string
+  content: string
+  publish_time: string
+}
+
+const details = ref<blogDetail>()
 onMounted(() => {
-  request.get('/detail', {
-    params: {
-      id: route.query.id,
-    },
-  })
+  if (!id) return // 防止没有 ID 的情况
+
+  request
+    .get('/blog/detail', {
+      params: { id },
+    })
+    .then((res) => {
+      details.value = res.data.data
+      // console.log(details.value)
+    })
+})
+const htmlContent = computed(() => {
+  return details.value ? marked(details.value.content) : ''
 })
 </script>
 
 <template>
-  <div class="wrap"></div>
+  <div class="wrap" v-html="htmlContent"></div>
 </template>
 
 <style lang="scss" scoped>
