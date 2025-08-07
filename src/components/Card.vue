@@ -81,6 +81,13 @@ const handleCardClick = async (e: MouseEvent) => {
 </template>
 
 <style lang="scss" scoped>
+@media (max-width: 767px) {
+  .all-card {
+    width: 1100px;
+    margin: 0 auto;
+  }
+}
+
 :deep(.el-carousel__arrow i) {
   color: black !important;
 }

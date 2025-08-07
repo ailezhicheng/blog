@@ -17,7 +17,7 @@ interface Card {
 }
 const card: Ref<Card[]> = ref([])
 
-onMounted(() => {
+onMounted(async () => {
   http.get('/blog').then((res) => {
     card.value = res.data.data
   })

@@ -24,9 +24,27 @@ onMounted(() => {
     })
     .then((res) => {
       details.value = res.data.data
-      // console.log(details.value)
     })
 })
+
+// const result = ref<string>('')
+// onMounted(async()=>{
+//   const res =  await request.post(
+//   'https://api.github.com/markdown',
+//   {
+//     text:details.value ,
+//     mode: 'gfm'
+//   },
+//   {
+//     headers: {
+//       Authorization: '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'
+//     }
+//   }
+// )
+// console.log(res);
+// result.value=res.data
+// })
+
 const htmlContent = computed(() => {
   return details.value ? marked(details.value.content) : ''
 })
@@ -38,6 +56,7 @@ const htmlContent = computed(() => {
 
 <style lang="scss" scoped>
 .wrap {
+  font-family: 'kaiTi';
   font-size: 20px;
   width: 1200px;
   margin: 40px auto;
