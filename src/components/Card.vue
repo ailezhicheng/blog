@@ -2,6 +2,7 @@
 import http from '../api/http'
 import { useRouter } from 'vue-router'
 import format from '@/utils.ts'
+import { onMounted } from 'vue'
 interface Card {
   imgs: string[]
   title: string
@@ -39,6 +40,9 @@ const handleCardClick = async (e: MouseEvent) => {
     query: { id: props.card.contentId },
   })
 }
+onMounted(() => {
+  console.log(props.card.imgs)
+})
 </script>
 
 <template>
@@ -49,6 +53,7 @@ const handleCardClick = async (e: MouseEvent) => {
           <div class="card">
             <el-carousel height="180px" arrow="always" indicator-position="none" interval="3500">
               <el-carousel-item v-for="(item, index) in card.imgs" :key="index">
+                <!-- <div> {{ item }}</div> -->
                 <img :src="item" alt="" />
               </el-carousel-item>
             </el-carousel>
