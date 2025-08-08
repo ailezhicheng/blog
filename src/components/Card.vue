@@ -55,6 +55,7 @@ onMounted(() => {
               <el-carousel-item v-for="(item, index) in card.imgs" :key="index">
                 <!-- <div> {{ item }}</div> -->
                 <img :src="item" alt="" />
+                <!-- <img :src="item + '?raw=true'" alt="" /> -->
               </el-carousel-item>
             </el-carousel>
           </div>
@@ -74,11 +75,11 @@ onMounted(() => {
           </div>
           <div class="tag3">
             <i class="iconfont icon-shouye" style="color: #909097; padding-right: 5px"></i>
-            <span style="color: #909097">{{ format(new Date(Number(card.publish_time))) }}</span>
+            <span style="color: #909097">{{ format(card.publish_time) }}</span>
           </div>
         </div>
         <span style="display: block; padding: 15px 20px; color: #909097">{{
-          new Date(Number(card.publish_time)).toLocaleDateString()
+          new Date(card.publish_time).toLocaleDateString()
         }}</span>
       </div>
     </div>
