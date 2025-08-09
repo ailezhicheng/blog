@@ -16,11 +16,30 @@ interface Card {
   _id: string
 }
 const card: Ref<Card[]> = ref([])
-
-onMounted(async () => {
-  http.get('/blog').then((res) => {
+const getData = async () => {
+  await http.get('/blog').then((res) => {
     card.value = res.data.data
   })
+}
+onMounted(() => {
+  getData()
+})
+
+onMounted(() => {
+  const socket = new WebSocket('wss://nbplus507.dpdns.org') // 确保连接正确的地址
+
+  socket.onopen = function () {
+    // console.log('WebSocket connected successfully');
+  }
+
+  socket.onmessage = function (event) {
+    // console.log('Received message:', event.data);
+    if (event.data === 'blog_change') getData()
+  }
+
+  socket.onclose = function () {
+    // console.log('WebSocket closed');
+  }
 })
 </script>
 

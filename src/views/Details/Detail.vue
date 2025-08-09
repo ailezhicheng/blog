@@ -43,7 +43,7 @@ const scrollEl = document.documentElement
         <MdPreview
           editorId="preview-only"
           :modelValue="details?.content || ''"
-          previewTheme="github"
+          previewTheme="default"
           :noMermaid="false"
           :noKatex="false"
         />

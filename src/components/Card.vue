@@ -2,7 +2,7 @@
 import http from '../api/http'
 import { useRouter } from 'vue-router'
 import format from '@/utils.ts'
-import { onMounted } from 'vue'
+
 interface Card {
   imgs: string[]
   title: string
@@ -40,9 +40,6 @@ const handleCardClick = async (e: MouseEvent) => {
     query: { id: props.card.contentId },
   })
 }
-onMounted(() => {
-  console.log(props.card.imgs)
-})
 </script>
 
 <template>
