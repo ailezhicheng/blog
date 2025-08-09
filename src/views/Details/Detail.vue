@@ -56,13 +56,6 @@ const scrollEl = document.documentElement
 </template>
 
 <style lang="scss" scoped>
-// .wrap {
-//   font-family: 'kaiTi';
-//   font-size: 20px;
-//   width: 1200px;
-//   margin: 40px auto;
-// }
-
 :deep(.md-editor-preview h1),
 :deep(.md-editor-preview h2),
 :deep(.md-editor-preview h3) {
