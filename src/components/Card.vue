@@ -51,11 +51,9 @@ onMounted(() => {
       <div class="card-main">
         <div class="img-container">
           <div class="card">
-            <el-carousel height="180px" arrow="always" indicator-position="none" interval="3500">
+            <el-carousel height="180px" arrow="always" indicator-position="none" :autoplay="false">
               <el-carousel-item v-for="(item, index) in card.imgs" :key="index">
-                <!-- <div> {{ item }}</div> -->
                 <img :src="item" alt="" />
-                <!-- <img :src="item + '?raw=true'" alt="" /> -->
               </el-carousel-item>
             </el-carousel>
           </div>

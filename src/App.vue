@@ -67,6 +67,9 @@ const handleEnter = () => {
 </script>
 <template>
   <div class="container">
+    <a href="https://blog.skysblue.dpdns.org/" target="_blank"
+      ><i class="iconfont icon-houtaiguanli-quanxianguanli blog-admin"></i
+    ></a>
     <div class="parentbox">
       <div class="background">
         <img
@@ -108,7 +111,9 @@ const handleEnter = () => {
             </div>
 
             <div class="social-link">
-              <i class="iconfont icon-github" style="margin-left: 13px"></i>
+              <a href="https://github.com/ailezhicheng" target="_blank" style="color: black">
+                <i class="iconfont icon-github" style="margin-left: 13px"></i
+              ></a>
               <i class="iconfont icon-telegram"></i>
               <i class="iconfont icon-tuite"></i>
             </div>
@@ -209,6 +214,14 @@ const handleEnter = () => {
   </div>
 </template>
 <style scoped lang="scss">
+.blog-admin {
+  position: absolute;
+  top: 200px;
+  right: 430px;
+  font-size: 30px;
+  color: #fa9c14;
+  z-index: 1000000;
+}
 .content-sousuo {
   .overlay {
     position: fixed;
