@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import type { Ref } from 'vue'
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import http from '@/api/http'
 import Card from '@/components/Card.vue'
 const route = useRoute()
@@ -18,53 +18,24 @@ interface Card {
 }
 const card: Ref<Card[]> = ref([])
 
-// const getData = async() =>{
-//   const key = route.query.key;  // 从路由查询参数获取关键字
-//       if (key) {
-//         try {
-//           // console.log("Keyword:", key);
-//           const response = await http.get(`/blog/search?key=${key}`);
-//           console.log(response.data);
-//           card.value=response.data.data
-//         } catch (error) {
-//           console.error('搜索失败:', error);
-//         }
-//       } else {
-//         console.warn('没有提供搜索关键字');
-//       }
-// }
-// onMounted(() => {
-//    getData()
-//     });
-
-//  watch(
-//   () => route.query.key,                     // 千万别提前解构 query
-//    (newValue, oldValue) => {
-//     console.log('key changed:', oldValue, '->', newValue);
-//      getData()
-//   }
-// );
-
-const normalizeKey = (k: unknown) => {
-  const v = Array.isArray(k) ? k[0] : k
-  return (v ?? '').toString().trim()
-}
-
 const getData = async () => {
-  const raw = route.query.key
-  const key = normalizeKey(raw)
-  if (!key) {
-    card.value = []
-    return
-  }
-
-  try {
-    const { data } = await http.get(`/blog/search?key=${encodeURIComponent(key)}`)
-    card.value = data.data
-  } catch (e) {
-    console.error('搜索失败:', e)
+  const key = route.query.key // 从路由查询参数获取关键字
+  if (key) {
+    try {
+      // console.log("Keyword:", key);
+      const response = await http.get(`/blog/search?key=${key}`)
+      console.log(response.data)
+      card.value = response.data.data
+    } catch (error) {
+      console.error('搜索失败:', error)
+    }
+  } else {
+    console.warn('没有提供搜索关键字')
   }
 }
+onMounted(() => {
+  getData()
+})
 
 // 用 watch 统一处理：进入页面也查一次
 watch(
