@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import request from '@/api/http'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, onBeforeUnmount } from 'vue'
 import { useRoute } from 'vue-router'
+import { init, type WalineInstance, type WalineInitOptions } from '@waline/client'
+import '@waline/client/style' // 自带样式
+let destroy: (() => void) | undefined
+
 // import { marked } from 'marked'
 const route = useRoute()
 
@@ -27,14 +31,34 @@ onMounted(() => {
     })
 })
 
-// const htmlContent = computed(() => {
-//   return details.value ? marked(details.value.content) : ''
-// })
-
 import { MdPreview, MdCatalog } from 'md-editor-v3'
 import 'md-editor-v3/lib/preview.css'
 const scrollEl = document.documentElement
+
+//comments
+
+onMounted(async () => {
+  const options: WalineInitOptions = {
+    el: '#waline',
+    serverURL: 'https://chat.nbplus507.dpdns.org',
+    lang: 'zh-CN',
+    dark: 'auto',
+    path: route.fullPath,
+    login: 'enable',
+    emoji: ['https://unpkg.com/@waline/emojis@1.2.0/weibo'],
+    reaction: true,
+    // requiredMeta: ['nick', 'mail'],
+    comment: true, // 是否启用评论（默认启用）
+    // 还有很多可选项：mail, imageUploader, search, wordLimit...
+  }
+
+  destroy = (init(options) as WalineInstance).destroy
+})
+onBeforeUnmount(() => {
+  destroy?.()
+})
 </script>
+
 <template>
   <!-- <div class="wrap markdown-body" v-html="htmlContent" style="margin-top: 40px"></div> -->
   <div class="page">
@@ -51,6 +75,7 @@ const scrollEl = document.documentElement
       <aside class="post-toc">
         <MdCatalog editorId="preview-only" :scrollElement="scrollEl" />
       </aside>
+      <div id="waline" class="my-10" />
     </div>
   </div>
 </template>
