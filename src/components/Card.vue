@@ -56,7 +56,8 @@ const handleCardClick = async (e: MouseEvent) => {
           </div>
         </div>
         <div class="title">{{ card.title }}</div>
-        <span class="feeling" style="color: #909097">{{ card.feeling }}</span>
+        <span class="feeling" style="color: #909097" v-html="card.feeling"></span>
+
         <div class="tag">
           <div class="tag1">
             <div>
@@ -109,8 +110,8 @@ const handleCardClick = async (e: MouseEvent) => {
   text-decoration: none;
 }
 .card-container {
-  width: 320px;
-  height: 330px;
+  width: 325px;
+  height: 340px;
   background-color: #ffffff;
   border: 2px solid #f9f9f9;
   border-radius: 20px;
@@ -137,12 +138,15 @@ const handleCardClick = async (e: MouseEvent) => {
     padding: 10px 20px;
   }
   .feeling {
-    padding: 10px 20px;
+    display: inline-block;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 18px;
   }
   .tag {
     display: flex;
     align-items: center;
-    padding-top: 10px;
+    // padding-top: 10px;
     .tag1 {
       padding-left: 20px;
     }

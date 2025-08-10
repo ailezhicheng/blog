@@ -24,7 +24,7 @@ const getData = async () => {
     try {
       // console.log("Keyword:", key);
       const response = await http.get(`/blog/search?key=${key}`)
-      console.log(response.data)
+
       card.value = response.data.data
     } catch (error) {
       console.error('搜索失败:', error)
