@@ -57,6 +57,7 @@ onBeforeUnmount(() => {
 })
 const handleEnter = () => {
   closeSearch()
+
   router.push({
     path: '/search',
     query: {
@@ -265,15 +266,15 @@ const handleEnter = () => {
   }
 
   /* 过渡动画 */
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: all 0.3s ease;
-  }
-  .fade-enter-from,
-  .fade-leave-to {
-    opacity: 0;
-    transform: scale(0.95);
-  }
+  // .fade-enter-active,
+  // .fade-leave-active {
+  //   transition: all 0.3s ease;
+  // }
+  // .fade-enter-from,
+  // .fade-leave-to {
+  //   opacity: 0;
+  //   transform: scale(0.95);
+  // }
 }
 .social-link {
   margin-top: 10px;

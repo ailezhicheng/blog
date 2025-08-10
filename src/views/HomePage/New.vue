@@ -26,7 +26,7 @@ onMounted(() => {
 })
 
 onMounted(() => {
-  const socket = new WebSocket('wss://nbplus507.dpdns.org') // 确保连接正确的地址
+  const socket = new WebSocket('wss://nbplus507.dpdns.org')
 
   socket.onopen = function () {
     // console.log('WebSocket connected successfully');
