@@ -36,7 +36,7 @@ const scrollEl = document.documentElement
 onMounted(async () => {
   const options: WalineInitOptions = {
     el: '#waline',
-    serverURL: 'https://chat.nbplus507.dpdns.org',
+    serverURL: 'https://chat.nbplus507.dpdns.org/waline',
     lang: 'zh-CN',
     dark: 'auto',
     path: route.fullPath,
