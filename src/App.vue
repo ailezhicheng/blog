@@ -64,6 +64,7 @@ const handleEnter = () => {
       key: keyword.value,
     },
   })
+  keyword.value = ''
 }
 </script>
 <template>
