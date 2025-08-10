@@ -49,7 +49,7 @@ watch(
 
 <template>
   <div class="wrap">
-    <h1 style="margin-top: 20px; font-size: 20px">找到({{ card.length }})条结果</h1>
+    <h1 style="margin-top: 20px; font-size: 20px">找到({{ card ? card.length : 0 }})条结果</h1>
     <div class="parentbox">
       <Card v-for="value in card" :key="value.contentId" :card="value" />
     </div>
