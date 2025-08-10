@@ -3,14 +3,11 @@ import request from '@/api/http'
 import { onMounted, ref, onBeforeUnmount } from 'vue'
 import { useRoute } from 'vue-router'
 import { init, type WalineInstance, type WalineInitOptions } from '@waline/client'
-import '@waline/client/style' // 自带样式
+import '@waline/client/style'
 let destroy: (() => void) | undefined
 
-// import { marked } from 'marked'
 const route = useRoute()
-
 const id = route.query.id as string
-
 interface blogDetail {
   imgs: string[]
   title: string
@@ -21,7 +18,6 @@ interface blogDetail {
 const details = ref<blogDetail>()
 onMounted(() => {
   if (!id) return
-
   request
     .get('/blog/detail', {
       params: { id },
@@ -31,16 +27,16 @@ onMounted(() => {
     })
 })
 
+// markdown 预览
 import { MdPreview, MdCatalog } from 'md-editor-v3'
 import 'md-editor-v3/lib/preview.css'
 const scrollEl = document.documentElement
 
 //comments
-
 onMounted(async () => {
   const options: WalineInitOptions = {
     el: '#waline',
-    serverURL: 'https://chat.nbplus507.dpdns.org',
+    serverURL: 'http:127.0.0.1:8360',
     lang: 'zh-CN',
     dark: 'auto',
     path: route.fullPath,
