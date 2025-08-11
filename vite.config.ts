@@ -23,4 +23,13 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://chat.nbplus507.dpdns.org',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 })

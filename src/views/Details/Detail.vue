@@ -2,9 +2,8 @@
 import request from '@/api/http'
 import { onMounted, ref, onBeforeUnmount } from 'vue'
 import { useRoute } from 'vue-router'
-import { init, type WalineInstance, type WalineInitOptions } from '@waline/client'
+import { type WalineInstance, type WalineInitOptions, init } from '@waline/client'
 import '@waline/client/style'
-let destroy: (() => void) | undefined
 
 const route = useRoute()
 const id = route.query.id as string
@@ -16,6 +15,7 @@ interface blogDetail {
 }
 
 const details = ref<blogDetail>()
+
 onMounted(() => {
   if (!id) return
   request
@@ -31,9 +31,10 @@ onMounted(() => {
 import { MdPreview, MdCatalog } from 'md-editor-v3'
 import 'md-editor-v3/lib/preview.css'
 const scrollEl = document.documentElement
-
+let destroy: (() => void) | undefined
 //comments
 onMounted(async () => {
+  // console.log(route.fullPath);
   const options: WalineInitOptions = {
     el: '#waline',
     serverURL: 'https://chat.nbplus507.dpdns.org',
