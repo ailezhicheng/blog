@@ -144,4 +144,25 @@ onBeforeUnmount(() => {
 //   .post{ grid-template-columns: 1fr; }
 //   .post-toc{ display: none; }
 // }
+@media (max-width: 767px) {
+  .page {
+    width: 100%;
+  }
+  .post {
+    width: 100%;
+  }
+
+  :deep(.md-editor-preview .md-editor-preview-wrapper) {
+    max-width: 100% !important; /* 正文理想宽度（800~900 自定） */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-inline: 12px !important;
+    box-sizing: border-box;
+  }
+  :deep(.md-editor-preview .markdown-body) {
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
 </style>

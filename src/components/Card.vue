@@ -83,13 +83,6 @@ const handleCardClick = async (e: MouseEvent) => {
 </template>
 
 <style lang="scss" scoped>
-@media (max-width: 767px) {
-  .all-card {
-    width: 1100px;
-    margin: 0 auto;
-  }
-}
-
 :deep(.el-carousel__arrow i) {
   color: black !important;
 }
@@ -178,5 +171,16 @@ const handleCardClick = async (e: MouseEvent) => {
 }
 .card-main:hover {
   transform: scale(1.05);
+}
+
+@media (max-width: 767px) {
+  .all-card {
+    width: 360px;
+    // margin: 0 auto;
+    margin-left: 35px;
+  }
+  .card-container {
+    width: 100%;
+  }
 }
 </style>

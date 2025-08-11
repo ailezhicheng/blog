@@ -1,5 +1,48 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
+import http from '@/api/http'
+interface Card {
+  imgs: string[]
+  title: string
+  feeling: string
+  tag: string
+  view: number
+  time: number
+  contentId: string
+  publish_time: string
+  _id: string
+}
+const cards = ref<Card[]>([])
+onMounted(async () => {
+  const res = await http.get('/blog', {
+    params: {
+      type: 'viewcount',
+    },
+  })
+  //  console.log(res);
+  cards.value = res.data.data
+})
+</script>
 
-<template>最热</template>
+<template>
+  <div class="wrap">
+    <div class="parentbox">
+      <Card v-for="value in cards" :key="value.contentId" :card="value" />
+    </div>
+  </div>
+</template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.wrap {
+  width: 1200px;
+  // margin-left: 400px;
+}
+
+.parentbox {
+  display: flex;
+  height: 480px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+</style>
