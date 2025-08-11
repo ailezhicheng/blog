@@ -95,7 +95,7 @@ onMounted(async () => {
   // 调用函数获取所有文章详情
   cards.value = await fetchAllArticleDetails()
 
-  console.log(cards.value)
+  // console.log(cards.value)
 })
 </script>
 
