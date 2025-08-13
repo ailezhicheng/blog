@@ -32,4 +32,5 @@ export default defineConfig({
       },
     },
   },
+   base: '/blog/',  // 这里是你 GitHub 仓库的名称
 })

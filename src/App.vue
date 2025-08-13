@@ -69,7 +69,7 @@ const handleEnter = () => {
 </script>
 <template>
   <div class="container">
-    <a href="https://blog.skysblue.dpdns.org/" target="_blank"
+    <a href=" https://ailezhicheng.github.io/blog-manager/" target="_blank"
       ><i class="iconfont icon-houtaiguanli-quanxianguanli blog-admin"></i
     ></a>
     <div class="parentbox">
