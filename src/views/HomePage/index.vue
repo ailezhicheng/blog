@@ -32,7 +32,8 @@ const handleSelect = (key: string) => {
     >
       <el-menu-item index="1">最新</el-menu-item>
       <el-menu-item index="2">最热</el-menu-item>
-      <el-menu-item index="3">最多评论</el-menu-item>
+      <!-- <el-menu-item index="2">最热</el-menu-item> -->
+      <el-menu-item index="3">评论</el-menu-item>
     </el-menu>
 
     <RouterView></RouterView>
@@ -68,5 +69,16 @@ const handleSelect = (key: string) => {
     border: none;
     margin: 0 15px;
   }
+}
+@media (max-width: 768px) {
+  .wrap {
+    width: 100%!important;
+  }
+  .el-menu--horizontal > .el-menu-item {
+    padding: 0 20px!important;
+    margin:0 10px!important;
+  }
+
+
 }
 </style>

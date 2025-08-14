@@ -173,13 +173,8 @@ const handleCardClick = async (e: MouseEvent) => {
   transform: scale(1.05);
 }
 
-@media (max-width: 767px) {
-  .all-card {
-    width: 360px;
-    // margin: 0 auto;
-    margin-left: 35px;
-  }
-  .card-container {
+@media (max-width: 768px) {
+  .card-main {
     width: 100%;
   }
 }

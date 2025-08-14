@@ -110,14 +110,33 @@ onMounted(async () => {
 <style lang="scss" scoped>
 .wrap {
   width: 1200px;
-  // margin-left: 400px;
 }
+
+// .parentbox {
+//   display: flex;
+//   height: 480px;
+//   margin-top: 20px;
+//   flex-wrap: wrap;
+//   gap: 12px;
+// }
 
 .parentbox {
   display: flex;
-  height: 480px;
-  margin-top: 20px;
+  // height: 480px;
+  // margin-top: 20px;
   flex-wrap: wrap;
   gap: 12px;
+}
+@media (max-width: 768px) {
+  .wrap {
+    width: 100%!important;
+  }
+
+  .parentbox {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0;
+  }
 }
 </style>

@@ -76,4 +76,9 @@ const handleSelect = (key: string) => {
     background-color: rgba(255, 255, 255, 0);
   }
 }
+@media (max-width: 768px) {
+  .wrap-container {
+    width: 100%!important;
+  }
+}
 </style>

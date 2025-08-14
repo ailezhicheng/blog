@@ -55,4 +55,15 @@ onMounted(() => {
   flex-wrap: wrap;
   gap: 12px;
 }
+
+@media (max-width: 768px) {
+  .new-container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+
+
+
+  }
+}
 </style>

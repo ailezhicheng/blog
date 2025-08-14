@@ -57,7 +57,6 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <!-- <div class="wrap markdown-body" v-html="htmlContent" style="margin-top: 40px"></div> -->
   <div class="page">
     <div class="post">
       <div class="post-content">
@@ -72,9 +71,12 @@ onBeforeUnmount(() => {
       <aside class="post-toc">
         <MdCatalog editorId="preview-only" :scrollElement="scrollEl" />
       </aside>
-      <div id="waline" class="my-10" />
+
+       <div id="waline" class="my-10" />
+
     </div>
   </div>
+
 </template>
 
 <style lang="scss" scoped>
@@ -91,14 +93,13 @@ onBeforeUnmount(() => {
 :deep(.md-editor-catalog) {
   max-height: calc(100vh - 120px);
   overflow: auto;
-  padding: 8px 12px;
+  padding: 8px 10px;
   border-radius: 8px;
 }
 
 .page {
   max-width: 1200px;
   margin-inline: auto;
-  padding-inline: 24px;
   box-sizing: border-box;
 }
 
@@ -113,56 +114,64 @@ onBeforeUnmount(() => {
 .post-toc {
   position: sticky;
   top: 80px;
+  // right: 0px;
 }
 
-/* 3) 让“内容列里的预览”真的居中、限宽 */
-.post-content {
-  min-width: 0;
-  display: flex;
-  justify-content: center;
-}
 
-/* ——关键覆盖：预览容器的 3 层都打到，且加 !important —— */
-:deep(.md-editor-preview) {
-  padding: 0 !important;
-}
+// .post-content {
+//   display: flex;
+//   justify-content: center;
+// }
+// :deep(.md-editor-preview) {
+//   padding: 0;
+// }
 :deep(.md-editor-preview .md-editor-preview-wrapper) {
-  max-width: 850px !important; /* 正文理想宽度（800~900 自定） */
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-inline: 12px !important;
+  max-width: 850px ; /* 正文理想宽度（800~900 自定） */
+  margin-left: auto ;
+  margin-right: auto ;
+  padding-inline: 12px ;
   box-sizing: border-box;
 }
 :deep(.md-editor-preview .markdown-body) {
-  max-width: 850px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  max-width: 850px ;
+  margin-left: auto ;
+  margin-right: auto;
 }
 
-/* 小屏可选：隐藏目录 */
-// @media (max-width: 1024px){
-//   .post{ grid-template-columns: 1fr; }
-//   .post-toc{ display: none; }
-// }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .page {
-    width: 100%;
+    width: 100% !important;
+    // padding: 0!important;
+
+
   }
   .post {
-    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 !important;
+    width: 80% !important;
+    column-gap: 0 !important;
+    margin-left: 0px !important;
+    padding-left: 40px !important;
+  }
+  :deep(.md-editor-catalog){
+    width: 80px !important;
+  }
+  :deep(.md-editor-catalog-container){
+    width: 80px !important;
+  }
+  .post-toc {
+    display: none;
+    // position: absolute;
+    // width: 80px !important;
+    // top: 30px !important;
+    // right: -50px !important;
   }
 
-  :deep(.md-editor-preview .md-editor-preview-wrapper) {
-    max-width: 100% !important; /* 正文理想宽度（800~900 自定） */
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-inline: 12px !important;
-    box-sizing: border-box;
-  }
-  :deep(.md-editor-preview .markdown-body) {
-    max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
+
+
+
 }
+
 </style>

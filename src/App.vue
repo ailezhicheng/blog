@@ -158,7 +158,7 @@ const handleEnter = () => {
                       ><span>在 B站 上查看</span></a
                     >
                   </li>
-                  <li>
+                  <li >
                     <a href="#"
                       ><i class="iconfont icon-dingyue"></i>
                       <span>订阅</span>
@@ -178,7 +178,7 @@ const handleEnter = () => {
             <div class="right-top right-top2">
               <span class="iconfont icon-dingyue" style="color: #ee832f"></span>
               <div class="drop_menu">
-                <span style="font-size: 18px; padding-left: 10px">订阅RSS</span>
+                <span style="font-size: 18px; padding-left: 10px" >订阅RSS</span>
               </div>
             </div>
             <div class="right-top right-top3" @click="openSearch">
@@ -266,16 +266,6 @@ const handleEnter = () => {
     }
   }
 
-  /* 过渡动画 */
-  // .fade-enter-active,
-  // .fade-leave-active {
-  //   transition: all 0.3s ease;
-  // }
-  // .fade-enter-from,
-  // .fade-leave-to {
-  //   opacity: 0;
-  //   transform: scale(0.95);
-  // }
 }
 .social-link {
   margin-top: 10px;
@@ -309,6 +299,7 @@ const handleEnter = () => {
   }
 }
 .parentbox {
+
   .left-profile img {
     height: 150px;
     width: 150px;
@@ -509,302 +500,54 @@ const handleEnter = () => {
     }
   }
 }
-
 .introduc:hover {
   transform: translateX(-50%) scale(1.01);
 }
-
-@media (max-width: 767px) {
-  .content-sousuo {
-    .overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.4);
-      // backdrop-filter: blur(1px); /* 背景模糊 */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-
-    /* 搜索框容器 */
-    .search-box {
-      position: relative;
-      background: white;
-      border-radius: 10px;
-      padding: 0.5rem 2rem;
-      min-width: 350px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      span {
-        position: absolute;
-        font-size: 20px;
-        top: 17px;
-        left: 35px;
-      }
-    }
-
-    .search-box input {
-      width: 80%;
-      padding: 0.6rem 2rem;
-      font-size: 16px;
-      border: none;
-      outline: none;
-      border-radius: 6px;
-      background: white;
-      &::placeholder {
-        font-family: 'KaiTi';
-        font-size: 18px;
-      }
-    }
-
-    /* 过渡动画 */
-    .fade-enter-active,
-    .fade-leave-active {
-      transition: all 0.3s ease;
-    }
-    .fade-enter-from,
-    .fade-leave-to {
-      opacity: 0;
-      transform: scale(0.95);
-    }
+@media (max-width: 768px) {
+  .right-top1{
+    display: none !important;
   }
-  .social-link {
-    margin-top: 20px;
-    i.iconfont {
-      font-size: 20px;
-      margin-right: 15px;
-      display: inline-block;
-    }
-    i.icon-github {
-      transition: transform 0.3s ease;
-      font-size: 25px;
-    }
-    i.icon-github:hover {
-      cursor: pointer;
-      transform: scale(1.1);
-    }
-    i.icon-telegram {
-      transition: transform 0.3s ease;
-      color: #26a5e4;
-    }
-    i.icon-telegram:hover {
-      cursor: pointer;
-      transform: scale(1.1);
-    }
-    i.icon-tuite {
-      transition: transform 0.3s ease;
-    }
-    i.icon-tuite:hover {
-      cursor: pointer;
-      transform: scale(1.1);
-    }
+  .right-top2 {
+    display: none !important;
   }
-  .left-profile img.profile {
-    display: inline-block;
-    height: 100px;
-    width: 100px;
-    margin-top: 50px !important;
+  .sponsor{
+    padding: 0 0 !important;
   }
-
-  .parentbox {
-    position: relative;
-    height: 280px;
-    .right {
-      display: flex;
-      position: absolute !important;
-      top: 180px;
-      // top: 20px;
-      // right: 40px;
-      .right-top {
-        //
-        padding: 0 10px;
-        height: 20px;
-        line-height: 20px;
-        border-radius: 20px;
-      }
-
-      .right-top1 {
-        position: relative;
-
-        .dian-box {
-          left: 0;
-          top: 38px;
-          position: absolute;
-          // width: 10%px;
-          width: 230px;
-
-          ul {
-            position: absolute;
-            z-index: 10000000;
-            background-color: #ffffff;
-            border-radius: 10px;
-            border: 1px solid white;
-            padding: 10px 0px;
-            box-shadow: 0 0px 18px rgba(0, 0, 0, 0.3);
-            li:hover {
-              background-color: #ece5ec;
-            }
-            li {
-              height: 35px;
-              line-height: 35px;
-              font-family: 'KaiTi';
-              a {
-                display: inline-block;
-                width: 100%;
-              }
-              a span {
-                font-size: 16px;
-                color: #5a6270;
-              }
-              a .iconfont {
-                margin: 0 10px;
-              }
-            }
-          }
-        }
-      }
-
-      .right-top2 {
-        position: relative;
-      }
-      .right-top2 .drop_menu {
-        position: absolute;
-        top: 40px;
-        left: -25px;
-        border-radius: 10px;
-        height: 35px;
-        width: 90px;
-        background-color: #52525b;
-        color: white;
-        display: none;
-      }
-      .right-top1:hover {
-        background-color: #ece5ec;
-      }
-
-      .right-top2:hover {
-        background-color: #ece5ec;
-      }
-      .right-top2:hover .drop_menu {
-        display: block;
-      }
-      .right-top3 {
-        position: relative;
-        .sousuo {
-          position: absolute;
-          top: 45px;
-          width: 100px;
-          left: -25px;
-          background-color: #52525b;
-          border-radius: 10px;
-          height: 35px;
-          line-height: 35px;
-          color: white;
-          text-align: center;
-          display: none;
-        }
-        &:hover .sousuo {
-          display: block;
-        }
-
-        &:hover {
-          background-color: #ece5ec;
-        }
-      }
-
-      .right-top4 {
-        // position: absolute;
-        border-radius: 20px;
-        background-color: #fa9c14;
-        height: 30px;
-        line-height: 30px;
-        padding: 0px 20px;
-        cursor: pointer;
-      }
-      div {
-        margin: 0 8px;
-        span {
-          font-size: 20px;
-        }
-      }
-    }
-
-    .background img {
-      display: inline-block;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-    }
-    .introduc {
-      height: 220px;
-      width: 100%;
-      position: absolute;
-      top: 10px;
-      // left: 50%;
-      // transform: translateX(-50%);
-      background-color: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(1px);
-      border-radius: 10px;
-      transition: transform 0.1s ease;
-      .main-container {
-        display: flex;
-        .title {
-          margin: 15px 10px;
-          margin-bottom: 20px;
-          font-size: 25px;
-          font-family: '楷体', 'KaiTi', 'STKaiti', serif;
-          font-weight: 700;
-        }
-        .description {
-          font-size: 15px !important;
-          margin-bottom: 15px;
-          margin-left: 8px;
-        }
-
-        ._info {
-          display: flex;
-          margin: 10px 10px;
-          margin-bottom: 10px;
-          .follower {
-            // span{font-size: 10px !important;}
-            display: inline-block;
-            margin-left: -13px;
-            height: 30px;
-            line-height: 30px;
-            padding: 0 10px;
-            border-radius: 19px;
-          }
-          .follower:hover {
-            background-color: #ece5ec;
-          }
-          .isfollowing {
-            display: inline-block;
-            height: 30px;
-            line-height: 30px;
-            padding: 0 10px;
-            border-radius: 19px;
-            margin-right: 20px;
-          }
-          .isfollowing:hover {
-            background-color: #ece5ec;
-          }
-          .sponsor {
-            display: inline-block;
-            height: 30px;
-            line-height: 30px;
-            padding: 0 10px;
-            border-radius: 19px;
-          }
-          .sponsor:hover {
-            background-color: #ece5ec;
-          }
-        }
-      }
-    }
+  .follower{
+    padding: 0 5px !important;
   }
+  .isfollowing{
+    padding: 0 5px !important;
+  }
+  .description{
+    font-size: 18px!important;
+  }
+  .title{
+    font-size: 20px!important;
+  }
+  .left-profile{
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .left-profile img{
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .background img{
+    width: 100% !important;
+  }
+  .container {
+    width: 100% !important;
+
+  }
+  .introduc{
+    width:100% !important;
+  }
+.main-container{
+  width: 100% !important;
+
 }
+}
+
+
 </style>
