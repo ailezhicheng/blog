@@ -62,8 +62,6 @@ onMounted(() => {
     flex-wrap: nowrap;
     align-items: center;
 
-
-
   }
 }
 </style>
