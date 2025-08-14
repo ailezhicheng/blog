@@ -69,9 +69,14 @@ const handleEnter = () => {
 </script>
 <template>
   <div class="container">
+
     <a href=" https://ailezhicheng.github.io/blog-manager/" target="_blank"
-      ><i class="iconfont icon-houtaiguanli-quanxianguanli blog-admin"></i
-    ></a>
+      class="admin_a">
+      <div class="blog-admin" >
+      <i class="iconfont icon-houtaiguanli-quanxianguanli " style="font-size: 25px;">
+        </i>
+    </div>
+      </a>
     <div class="parentbox">
       <div class="background">
         <img
@@ -504,6 +509,22 @@ const handleEnter = () => {
   transform: translateX(-50%) scale(1.01);
 }
 @media (max-width: 768px) {
+  .sousuo{
+    display: none !important;
+  }
+  .admin_a {
+    display: block !important;
+
+
+
+  }
+  .blog-admin {
+     position: absolute;
+     top: 275px;
+     right: 160px;
+  color: #fa9c14;
+  z-index: 1000000;
+}
   .right-top1{
     display: none !important;
   }

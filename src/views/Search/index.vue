@@ -69,4 +69,18 @@ watch(
   flex-wrap: wrap;
   gap: 12px;
 }
+@media (max-width: 768px) {
+  .wrap {
+    width: 100% !important;
+    margin-left: 0!important;
+
+  }
+  .parentbox {
+    width: 100% !important;
+    flex-direction: column;
+    align-items: center;
+
+
+  }
+}
 </style>
