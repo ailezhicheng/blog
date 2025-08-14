@@ -193,8 +193,8 @@ const handleEnter = () => {
               </div>
             </div>
             <div class="right-top4">
-              <span class="iconfont icon-profilefill" style="color: #faf9fa; font-size: 15"></span
-              ><span style="color: #faf9fa">关注</span>
+              <span class="iconfont icon-profilefill" style="color: #faf9fa; font-size: 15"></span>
+              <span style="color: #faf9fa">关注</span>
             </div>
           </div>
         </div>
@@ -509,19 +509,28 @@ const handleEnter = () => {
   transform: translateX(-50%) scale(1.01);
 }
 @media (max-width: 768px) {
+  .right-top3{
+    position: relative;
+    right:-50px ;
+
+  }
+  .right-top4{
+    position: relative;
+    right: -40px;
+    top: 4px;
+    // margin-left: 70px !important;
+    // display: none !important;
+  }
   .sousuo{
     display: none !important;
   }
   .admin_a {
     display: block !important;
-
-
-
   }
   .blog-admin {
      position: absolute;
-     top: 275px;
-     right: 160px;
+     top: 293px;
+     right: 110px;
   color: #fa9c14;
   z-index: 1000000;
 }
