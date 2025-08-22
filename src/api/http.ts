@@ -1,7 +1,10 @@
 import axios from 'axios'
 const request = axios.create({
   baseURL: 'https://nbplus507.dpdns.org',
-  
+
+  // baseURL: 'https://nbplus507.dpdns.org',
+  // baseURL: 'http://127.0.0.1:3000'
+
 
 })
 request.interceptors.request.use(
